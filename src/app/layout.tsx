@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
+// import localFont from "next/font/local";
 import "./globals.css";
 
 [].forEach((item) => {
   console.log("something...", item);
 });
+
+const first_name = "ashutosh";
+const last_name = "singh";
+const full_name = `${first_name} ${last_name}`;
+
+console.log(full_name);
 
 export const metadata: Metadata = {
   title: "Create Next App",
