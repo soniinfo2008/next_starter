@@ -1,9 +1,12 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { Link } from "@/components/ui/link";
 
 export default function Home() {
   return (
     <div>
-      <Button>Click me</Button>
+      <Link href="/app" className={buttonVariants({ variant: "outline" })}>
+        Click here
+      </Link>
     </div>
   );
 }
