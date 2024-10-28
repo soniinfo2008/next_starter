@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -78,17 +77,44 @@
     --sidebar-ring: 240 4.9% 83.9%;
   }
 }
+
 @layer base {
   * {
     @apply border-border;
   }
-  html {
-    @apply scroll-smooth;
-  }
   body {
-    @apply bg-background text-foreground;
-    /* font-feature-settings: "rlig" 1, "calt" 1; */
-    font-synthesis-weight: none;
-    text-rendering: optimizeLegibility;
+    @apply bg-background text-base text-foreground antialiased;
   }
+}
+::-webkit-scrollbar {
+  width: 5px;
+  z-index: 1000;
+  height: 5px;
+  border-radius: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border-radius: 100px;
+  background-color: #dfe6ed;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ellipsis-one-line span,
+.ellipsis-multilines span {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.ellipsis-one-line span {
+  -webkit-line-clamp: 1;
+}
+
+.ellipsis-multilines span {
+  -webkit-line-clamp: 3;
 }
