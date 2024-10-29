@@ -1,23 +1,11 @@
-"use client";
+import LoginForm from "@/features/auth/components/login-form";
 
-import { useRouter, useSearchParams } from "next/navigation";
-
-import LoginForm from "@/features/auth/login/login-form";
-
-const LoginPage = () => {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const redirectTo = searchParams?.get("redirectTo");
-
+const RegisterPage = () => {
   return (
     <div>
-      <LoginForm
-        onSuccess={() =>
-          router.replace(`${redirectTo ? `${redirectTo}` : "/app"}`)
-        }
-      />
+      <LoginForm />
     </div>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
