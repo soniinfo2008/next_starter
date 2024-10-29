@@ -12,7 +12,7 @@ export default function Home() {
         <Link href="/register">Register</Link>
       </Button>
       <Button variant="destructive" asChild>
-        <Link href="/app">Application</Link>
+        <Link href="/application">Application</Link>
       </Button>
 
       {/* <ModeToggle /> */}
