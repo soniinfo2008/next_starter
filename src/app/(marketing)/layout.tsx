@@ -4,8 +4,8 @@ export default async function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      MarketingLayout
+    <section className="p-10">
+      Website Layout
       {children}
     </section>
   );
