@@ -2,30 +2,20 @@
 
 import * as React from "react";
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ErrorBoundary } from "react-error-boundary";
 
 import { MainErrorFallback } from "@/components/errors/main";
-import { ThemeProvider } from "@/components/theme/theme-provider";
-import { queryConfig } from "@/lib/react-query";
+import TanstackProvider from "@/components/provider/tanstack-provider";
+import { ThemeProvider } from "@/components/provider/theme-provider";
 
 type AppProviderProps = {
   children: React.ReactNode;
 };
 
 export const AppProvider = ({ children }: AppProviderProps) => {
-  const [queryClient] = React.useState(
-    () =>
-      new QueryClient({
-        defaultOptions: queryConfig,
-      })
-  );
-
   return (
     <ErrorBoundary FallbackComponent={MainErrorFallback}>
-      <QueryClientProvider client={queryClient}>
-        {process.env.DEV && <ReactQueryDevtools />}
+      <TanstackProvider>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -34,7 +24,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         >
           {children}
         </ThemeProvider>
-      </QueryClientProvider>
+      </TanstackProvider>
     </ErrorBoundary>
   );
 };

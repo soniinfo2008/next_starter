@@ -12,7 +12,11 @@
           "src/config/**/*",
           "src/hooks/**/*",
           "src/lib/**/*",
-          "src/server/**/*"
+          "src/services/**/*",
+          "src/constants/**/*",
+          "src/store/**/*",
+          "src/styles/**/*",
+          "src/types/**/*"
         ]
       },
       {

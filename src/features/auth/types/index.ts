@@ -1,1 +1,4 @@
-export type FlashMessageProps = { message?: string };
+export interface IRefreshTokenResponse {
+  accessToken: string;
+  refreshToken: string;
+}

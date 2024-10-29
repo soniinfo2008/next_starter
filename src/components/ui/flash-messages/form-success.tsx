@@ -1,6 +1,6 @@
 import { CheckCircledIcon } from "@radix-ui/react-icons";
 
-import { FlashMessageProps } from "@/features/auth/types";
+import { FlashMessageProps } from "@/types";
 
 const FormSuccess = ({ message }: FlashMessageProps) => {
   if (!message) return null;

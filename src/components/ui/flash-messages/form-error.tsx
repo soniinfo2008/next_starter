@@ -1,6 +1,6 @@
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 
-import { FlashMessageProps } from "@/features/auth/types";
+import { FlashMessageProps } from "@/types";
 
 const FormError = ({ message }: FlashMessageProps) => {
   if (!message) return null;
