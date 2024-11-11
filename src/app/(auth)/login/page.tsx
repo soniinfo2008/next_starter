@@ -1,6 +1,6 @@
-import LoginForm from "@/features/auth/login/form/login-form";
+import { LoginForm } from "@/features/auth/login/login-form";
 
-const RegisterPage = () => {
+const LoginPage = () => {
   return (
     <div>
       <LoginForm />
@@ -8,4 +8,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default LoginPage;

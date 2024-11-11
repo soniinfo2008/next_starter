@@ -1,7 +1,7 @@
 import { AxiosRequestConfig, Method } from "axios";
 import { z } from "zod";
 
-import { instance, instanceWithoutInterceptors } from "@/services/lib/axios";
+import { instance, instanceWithoutInterceptors } from "@/lib/axios";
 
 interface APICallPayload<Request, Response> {
   method: Method;
@@ -26,6 +26,8 @@ export function api<Request, Response>({
     let url = path;
     let data = null;
 
+    console.log(url, type);
+
     if (requestData) {
       if (method === "GET" || method === "DELETE") {
         url += `${requestData}`;
@@ -45,6 +47,8 @@ export function api<Request, Response>({
       type === "private"
         ? await instance(config)
         : await instanceWithoutInterceptors(config);
+
+    console.log(response.data);
 
     // Parse and validate response data
     const result = responseSchema.safeParse(response.data);

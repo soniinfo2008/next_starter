@@ -6,7 +6,11 @@ export const metadata = {
 };
 
 const AppLayout = ({ children }: { children: ReactNode }) => {
-  return <main>{children}</main>;
+  return (
+    <main className="flex h-svh w-full flex-col overflow-hidden bg-background">
+      {children}
+    </main>
+  );
 };
 
 export default AppLayout;

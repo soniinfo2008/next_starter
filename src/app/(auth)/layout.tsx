@@ -1,5 +1,3 @@
-import { Suspense } from "react";
-
 export default async function AuthLayout({
   children,
 }: {
@@ -18,9 +16,7 @@ export default async function AuthLayout({
         </div>
       </div>
       <div className="flex h-full items-center justify-center">
-        <div className="mx-auto grid gap-6">
-          <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-        </div>
+        <div className="mx-auto grid gap-6">{children}</div>
       </div>
     </div>
   );

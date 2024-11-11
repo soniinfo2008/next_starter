@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import NextTopLoader from "nextjs-toploader";
-
 import { AppProvider } from "@/components/provider";
 import "@/styles/globals.css";
 
@@ -28,11 +26,6 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} h-dvh antialiased`}>
-        <NextTopLoader
-          color="hsl(var(--primary))"
-          showSpinner={false}
-          zIndex={100000}
-        />
         <AppProvider>{children}</AppProvider>
       </body>
     </html>

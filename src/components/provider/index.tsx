@@ -3,6 +3,7 @@
 import * as React from "react";
 
 import { ErrorBoundary } from "react-error-boundary";
+import { Toaster } from "sonner";
 
 import { MainErrorFallback } from "@/components/errors/main";
 import TanstackProvider from "@/components/provider/tanstack-provider";
@@ -22,6 +23,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster richColors />
           {children}
         </ThemeProvider>
       </TanstackProvider>

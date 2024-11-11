@@ -1,24 +1,27 @@
-// import { getRefreshToken } from "@/services/refresh-token/api";
 import axios, {
   AxiosError,
   CreateAxiosDefaults,
   InternalAxiosRequestConfig,
 } from "axios";
 
+import { getRefreshToken } from "@/services/refresh-token/api";
 import { useUserStore } from "@/store/user-store";
 
 interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
   _retry?: boolean;
 }
 
-const baseConfig: CreateAxiosDefaults = {
-  baseURL: "https://jsonfakery.com",
+const publicConfig: CreateAxiosDefaults = {
+  baseURL: `https://api.freeapi.app/api/v1`,
+};
+const privateConfig: CreateAxiosDefaults = {
+  baseURL: `https://api.freeapi.app/api/v1`,
   withCredentials: true,
 };
 
-export const instanceWithoutInterceptors = axios.create(baseConfig);
+export const instanceWithoutInterceptors = axios.create(publicConfig);
 
-export const instance = axios.create(baseConfig);
+export const instance = axios.create(privateConfig);
 
 instance.interceptors.request.use(
   (config) => {
@@ -49,13 +52,7 @@ instance.interceptors.response.use(
     ) {
       originalRequest._retry = true;
       try {
-        // const response = await getRefreshToken();
-        // ? simulate refresh token
-        const response = {
-          payload: {
-            accessToken: "hello",
-          },
-        };
+        const response = await getRefreshToken();
 
         const { payload } = response;
 
