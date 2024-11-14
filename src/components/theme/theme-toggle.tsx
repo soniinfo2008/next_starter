@@ -8,7 +8,7 @@ import { useTheme } from "next-themes";
 
 import { cn } from "@/lib/utils";
 
-const buttonVariants = cva("size-6 rounded-full p-1.5 text-muted-foreground", {
+const buttonVariants = cva("size-7 rounded-full p-1.5 text-muted-foreground", {
   variants: {
     dark: {
       true: "dark:bg-accent dark:text-accent-foreground",

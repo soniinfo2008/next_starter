@@ -38,6 +38,10 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 240 5% 64.9%;
+
+    --bottom-menu-height: 64px;
+    --mobile-width: 360px;
+    /* --page_safe_boundry: calc(100dvh - var(--bottom-menu-height)); */
   }
 
   .dark {
@@ -84,6 +88,137 @@
   }
   body {
     @apply bg-background text-base text-foreground antialiased;
+  }
+  .reset_animation {
+    @apply ![animation-duration:_.1s];
+  }
+
+  .prose {
+    @apply text-justify;
+  }
+
+  .prose p {
+    @apply text-sm font-normal text-muted-foreground;
+  }
+
+  .prose ul {
+    @apply my-5 flex flex-col gap-2 text-muted-foreground;
+  }
+
+  .prose ol {
+    @apply my-5 flex flex-col gap-2 text-muted-foreground;
+  }
+
+  .prose li {
+    @apply my-0;
+  }
+
+  .prose a {
+    @apply text-sm font-semibold text-indigo-500;
+  }
+
+  p {
+    @apply text-sm font-normal text-muted-foreground;
+  }
+
+  @media only screen and (min-width: 640px) {
+    .prose h1 {
+      @apply my-5 text-3xl font-bold;
+    }
+
+    .prose h2 {
+      @apply my-5 text-2xl font-bold;
+    }
+
+    .prose h3 {
+      @apply my-5 text-xl font-bold;
+    }
+
+    .prose h4 {
+      @apply my-5 text-lg font-bold;
+    }
+
+    .prose h5 {
+      @apply my-2 text-base font-semibold;
+    }
+
+    .prose h6 {
+      @apply my-2 text-sm font-semibold;
+    }
+
+    h1 {
+      @apply text-3xl font-bold;
+    }
+
+    h2 {
+      @apply text-2xl font-bold;
+    }
+
+    h3 {
+      @apply text-xl font-bold;
+    }
+
+    h4 {
+      @apply text-lg font-bold;
+    }
+
+    h5 {
+      @apply text-base font-semibold;
+    }
+
+    h6 {
+      @apply text-sm font-semibold;
+    }
+  }
+
+  @media only screen and (max-width: 640px) {
+    .prose h1 {
+      @apply my-5 text-2xl font-bold;
+    }
+
+    .prose h2 {
+      @apply my-5 text-xl font-bold;
+    }
+
+    .prose h3 {
+      @apply my-5 text-lg font-bold;
+    }
+
+    .prose h4 {
+      @apply my-5 text-base font-bold;
+    }
+
+    .prose h5 {
+      @apply my-2 text-sm font-semibold;
+    }
+
+    .prose h6 {
+      @apply my-2 text-xs font-semibold;
+    }
+
+    h1 {
+      @apply text-2xl font-bold;
+    }
+
+    h2 {
+      @apply text-xl font-bold;
+    }
+
+    h3 {
+      @apply text-lg font-bold;
+    }
+
+    h4 {
+      @apply text-base font-bold;
+    }
+
+    h5 {
+      @apply text-sm font-semibold;
+    }
+
+    h6 {
+      @apply text-xs font-semibold;
+    }
   }
 }
 ::-webkit-scrollbar {

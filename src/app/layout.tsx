@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Karla } from "next/font/google";
 
 import { AppProvider } from "@/components/provider";
 import "@/styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const karla = Karla({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Next Js Starter App",
@@ -25,8 +25,12 @@ export default function RootLayout({
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>"
         />
       </head>
-      <body className={`${inter.className} h-dvh antialiased`}>
-        <AppProvider>{children}</AppProvider>
+      <body className={`${karla.className}`}>
+        <main className="relative flex min-h-dvh min-w-[var(--mobile-width)] flex-col bg-background antialiased">
+          <div className="w-full flex-1">
+            <AppProvider>{children}</AppProvider>
+          </div>
+        </main>
       </body>
     </html>
   );

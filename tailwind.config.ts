@@ -1,5 +1,3 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -57,18 +55,17 @@ module.exports = {
         md: "0 10px 40px 10px rgba(0, 0, 0, 0.08)",
         sidebar: "-4px 0 4px -4px hsl(var(--border)) inset",
       },
-      fontSize: {
-        base: ["0.875rem", "21px"],
-        sm: "0.75rem",
-      },
       borderRadius: {
         lg: `var(--radius)`,
         md: `calc(var(--radius) - 2px)`,
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        sans: ["Karla", "sans"],
       },
+      // fontFamily: {
+      //   sans: ["var(--font-sans)", ...fontFamily.sans],
+      // },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
